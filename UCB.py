@@ -1,5 +1,5 @@
-### Identifying the arm with the greatest mean value. The epsilon-greedy approach is used for exploration.
-### The distribution of the rewards are Gaussian with vartiance 1 and means: [1,2,3,4].
+### Identifying the arm with the greatest mean value. Upper Confidence Bounds are used for exploration exploitation.
+### The distribution of the rewards are Gaussian with vartiance 1 and means: [0,-3,8,2].
 ### Output: A plot of the moving average of the data and the estimated mean of the best arm
 
 import numpy as np
@@ -24,7 +24,7 @@ def experiment(mean1,mean2,mean3,mean4,eps,N): #epsilon greedy approach
 	Bandits=[Bandit(mean1,N),Bandit(mean2,N),Bandit(mean3,N),Bandit(mean4,N)] #initialize the bandits
 	data=np.empty(N) #Initialize the data
 
-	for i in range(N):
+	for i in range(N): #UCB bounds, Hoeffding's inequality
 		print([b.number_of_pulls_so_far for b in Bandits])#print the number of pulls for each arm
 		k=np.argmax([b.est_mean + np.sqrt(2*np.log(i)/b.number_of_pulls_so_far) for b in Bandits]) #Choose the next arm based on its confidence bound
 		sample=Bandits[k].pull() #sample the the arm k
