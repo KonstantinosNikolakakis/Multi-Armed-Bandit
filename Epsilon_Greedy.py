@@ -1,4 +1,4 @@
-### Identifying the arm with the greatest mean value. The epsilon greedy-approach is used for exploration.
+### Identifying the arm with the greatest mean value. The epsilon-greedy approach is used for exploration.
 ### The distribution of the rewards are Gaussian with vartiance 1 and means: [1,2,3,4]. 
 ### Output: A plot of the moving average of the data and the estimated mean of the best arm 
 
