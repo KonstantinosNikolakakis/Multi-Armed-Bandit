@@ -1,4 +1,4 @@
-### Identifying the arm with the greatest mean value. Upper Confidence Bounds are used for exploration exploitation.
+### Identifying the arm with the greatest mean value. Upper Confidence Bounds (Chernoff bounds) are used for exploration exploitation.
 ### The distribution of the rewards are Gaussian with vartiance 1 and means: [0,-3,8,2].
 ### Output: A plot of the moving average of the data and the estimated mean of the best arm
 
