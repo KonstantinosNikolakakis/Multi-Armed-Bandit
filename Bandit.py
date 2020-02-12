@@ -29,7 +29,7 @@ def experiment(mean1,mean2,mean3,mean4,eps,N): #epsilon greedy approach
 		if p<eps: #Explore with probability eps
 			k=np.random.choice(4) #Choose randomly an arm for exploration
 		else:
-			k=np.argmax([b.est_mean for b in Bandits]) #Choose the best arm with probability 1-eps 
+			k=np.argmax([b.est_mean for b in Bandits]) #With probability 1-eps choose the arm with greatest estimated mean 
 		sample=Bandits[k].pull() #sample the the arm k
 		Bandits[k].update_mean(sample) #update the mean of the arm k
 	
