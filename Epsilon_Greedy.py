@@ -56,7 +56,7 @@ def experiment(mean1,mean2,mean3,mean4,eps,N): #epsilon greedy approach
 	plt.show()
 	###############################################################################################
 
-	return np.argmax([Bandits[0].est_mean,Bandits[1].est_mean,Bandits[2].est_mean,Bandits[3].est_mean]) #Return the best arm
+	return np.argmax([b.est_mean for b in Bandits]) #Return the best arm
 	
 
 if __name__=='__main__':
